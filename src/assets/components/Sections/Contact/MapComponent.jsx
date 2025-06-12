@@ -1,10 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { 
   BsLinkedin,
   BsFillEnvelopeAtFill,
   BsFillPinMapFill ,
   BsFillTelephoneFill  
  } from "react-icons/bs";
+ import { leftSideVariants, textVariants } from '../../Motions/MotionFrame';
 import {
   GoogleMap,
   LoadScript,
@@ -59,23 +61,32 @@ function MapComponent() {
           transition: 'filter 0.3s ease',
         }}
       >
-        <GoogleMap
-          mapContainerStyle={containerStyle}
-          center={center}
-          zoom={12}
-          mapTypeId="hybrid"
-          onLoad={handleMapLoad}
+        <motion.div
+         initial="hidden"
+          animate="visible"
+          variants={leftSideVariants}
         >
-          <Marker position={center} />
-          <StreetViewPanorama
-            position={center}
-            visible={showStreetView}
-            options={streetViewOptions}
-          />
-        </GoogleMap>
-
-        <div className="contact-details">
-          <p>
+          <GoogleMap
+            mapContainerStyle={containerStyle}
+            center={center}
+            zoom={12}
+            mapTypeId="hybrid"
+            onLoad={handleMapLoad}
+          >
+            <Marker position={center} />
+            <StreetViewPanorama
+              position={center}
+              visible={showStreetView}
+              options={streetViewOptions}
+            />
+          </GoogleMap>
+        </motion.div>  
+        <motion.div className="contact-details"
+            initial="hidden"
+             animate="visible"
+             variants={leftSideVariants}
+        >
+          <motion.p variants={textVariants}>
             <a
               href="https://www.linkedin.com/Kakoi1"
               target="_blank"
@@ -83,16 +94,16 @@ function MapComponent() {
             >
              <BsLinkedin /> https://www.linkedin.com/Kakoi1
             </a>
-          </p>
-          <p>
+          </motion.p>
+          <motion.p variants={textVariants}>
             <a href="mailto:lopezrolandshane@gmail.com">
               <BsFillEnvelopeAtFill /> lopezrolandshane@gmail.com
             </a>
-          </p>
-          <p><BsFillPinMapFill /> {address || 'Loading address...'}</p>
-          <p><BsFillTelephoneFill /> 
- 09661805821</p>
-        </div>
+          </motion.p>
+          <motion.p variants={textVariants}><BsFillPinMapFill /> {address || 'Loading address...'}</motion.p>
+          <motion.p variants={textVariants}><BsFillTelephoneFill /> 
+ 09661805821</motion.p>
+        </motion.div>
       </div>
     </LoadScript>
   );

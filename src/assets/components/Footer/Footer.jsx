@@ -13,7 +13,7 @@ function Footer() {
         <span className='initialName'>R.S</span>
         <div className='socialWrap'>
         {socialIcon.map((item, index) =>
-        <a href={item.link} target='_blank'>
+        <a href={item.link} target='_blank' key={index}>
             {item.icon}
         </a> )}
         </div>

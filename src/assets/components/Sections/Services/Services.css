@@ -49,3 +49,13 @@
 .serviceDetails{
     padding: 0px 10px 10px 10px;
 }
+@media (max-width: 639px) {
+    .serviceWrapper{
+        flex-direction: column;
+        padding: 20px 0px 20px 0px;
+    }
+    .serviceItem{
+        width: 80%;
+        height: auto;
+    }
+}

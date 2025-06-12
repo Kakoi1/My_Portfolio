@@ -17,7 +17,20 @@
   gap: 30px;
   font-family: "Inter", sans-serif;
 }
-
+.leftChev{
+   padding: 5px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  color: #EE0535;
+  font-size: 20px;
+}
+.leftChev:hover {
+  background-color: #333333; /* Darker gray for contrast */
+  color: #ff1a4d; /* Lighter shade of #EE0535 */
+}
 .linkWrap {
   margin-right: 10px;
 }

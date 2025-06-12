@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 import './Skills.css';
+import { leftSideVariants, textVariants } from '../../Motions/MotionFrame';
 
 function Skills() {
   const skills = [
@@ -21,7 +23,7 @@ function Skills() {
       {
         root: null,
         rootMargin: '0px',
-        threshold: 0.5, 
+        threshold: 0.5,
       }
     );
 
@@ -38,23 +40,40 @@ function Skills() {
 
   return (
     <div className="skills-container" ref={skillsRef}>
-      <h2>Programming Skills</h2>
-      <div className="skillWrap">
+      <motion.h2 variants={textVariants} initial="hidden" animate={isVisible ? "visible" : "hidden"}>
+        Programming Skills
+      </motion.h2>
+      <motion.div
+        className="skillWrap"
+        initial="hidden"
+        animate={isVisible ? "visible" : "hidden"}
+        variants={leftSideVariants}
+      >
         {skills.map((skill, index) => (
-          <div key={index} className="skill-item">
-            <div className="skill-header">
-              <span className="skill-name">{skill.name}</span>
-              <span className="skill-level">{skill.level}%</span>
-            </div>
+          <motion.div
+            key={index}
+            className="skill-item"
+            variants={textVariants}
+          >
+            <motion.div className="skill-header" variants={textVariants}>
+              <motion.span className="skill-name" variants={textVariants}>
+                {skill.name}
+              </motion.span>
+              <motion.span className="skill-level" variants={textVariants}>
+                {skill.level}%
+              </motion.span>
+            </motion.div>
             <div className="progress-bar">
-              <div
-                className={`progress-fill ${isVisible ? 'fill' : 'empty'}`}
-                style={{ '--progress-width': `${skill.level}%` }}
-              ></div>
+              <motion.div
+                className="progress-fill"
+                initial={{ width: '0%' }}
+                animate={isVisible ? { width: `${skill.level}%` } : { width: '0%' }}
+                transition={{ duration: 1, ease: 'easeIn' }}
+              ></motion.div>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

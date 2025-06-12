@@ -14,15 +14,15 @@ function Layout() {
             <Home/>
         </section>
          <section>
-          <h1 className='sectionTitle'><span>Services</span></h1>
+          <h1 className='sectionTitle' style={{textAlign:'center'}}><span>Services</span></h1>
             <Services/>
         </section>
         <section>
-          <h1 className='sectionTitle'><span>Skills</span></h1>
+          <h1 className='sectionTitle' style={{textAlign:'center'}}><span>Skills</span></h1>
             <Skills/>
         </section>
         <section>
-          <h1 className='sectionTitle'><span>Contact Me</span></h1>
+          <h1 className='sectionTitle' style={{textAlign:'center'}}><span>Contact Me</span></h1>
             <Contact/>
         </section>
           <Footer/>

@@ -39,8 +39,8 @@
 }
 
 .leftSide span {
-   background-image: linear-gradient(to right, #EE0535, #bfbebe);
-  color: transparent;
+   /* background-image: linear-gradient(to right, #EE0535, #EE0535); */
+  color: #EE0535;
   -webkit-background-clip: text;
   background-clip: text;
   font-family: "Inter", sans-serif;
@@ -83,4 +83,15 @@
 }
 .aboutDesc{
     margin-top: -15px;
+}
+@media (max-width: 639px) {
+  .with-blur-backdrop {
+    flex-direction: column-reverse;
+     align-items: normal;
+    transition: all 1s ease-in !important;
+  }
+  .leftSide {
+    text-align: start;
+    max-width: none;
+  }
 }

@@ -1,33 +1,110 @@
-import React from 'react';
-import './Contact.css';
+import React, { useState, useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { BsEnvelopeArrowUp } from "react-icons/bs";
 import MapComponent from './MapComponent';
+import './Contact.css';
+import { leftSideVariants, textVariants } from '../../Motions/MotionFrame';
+
 function Contact() {
+  const [isVisible, setIsVisible] = useState(false);
+  const contactRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5,
+      }
+    );
+
+    if (contactRef.current) {
+      observer.observe(contactRef.current);
+    }
+
+    const checkInitialVisibility = () => {
+      if (contactRef.current) {
+        const rect = contactRef.current.getBoundingClientRect();
+        const isInViewport = (
+          rect.top >= 0 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        );
+        setIsVisible(isInViewport);
+      }
+    };
+
+    checkInitialVisibility();
+
+    return () => {
+      if (contactRef.current) {
+        observer.unobserve(contactRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div className="contact-container">
-      <div className="contact-content">
-        <div className="contact-form">
-          <h2>Let's Talk</h2>
+      <motion.div
+        className="contact-content"
+        ref={contactRef}
+        initial="hidden"
+        animate={isVisible ? "visible" : "hidden"}
+        variants={leftSideVariants}
+      >
+        <motion.div className="contact-form" variants={leftSideVariants}>
+          <motion.h2 variants={textVariants}>Let's Talk</motion.h2>
           <form>
-            <div className='formWrapper'>
-                <div className="form-row">
-                <input type="text" placeholder="Last Name" className="input-field" />
-                <input type="text" placeholder="First Name" className="input-field" />
-                </div>
-                <input type="email" placeholder="Email" className="input-field full-width" />
-                <input type="tel" placeholder="Phone Number" className="input-field full-width" />
-                <textarea placeholder="Message" className="input-field full-width textarea"></textarea>
-                <button type="submit" className="submit-button">Send me a message <BsEnvelopeArrowUp /></button>
-            </div>
+            <motion.div className="formWrapper" variants={leftSideVariants}>
+              <motion.div className="form-row" variants={textVariants}>
+                <motion.input
+                  type="text"
+                  placeholder="Last Name"
+                  className="input-field"
+                  variants={textVariants}
+                />
+                <motion.input
+                  type="text"
+                  placeholder="First Name"
+                  className="input-field"
+                  variants={textVariants}
+                />
+              </motion.div>
+              <motion.input
+                type="email"
+                placeholder="Email"
+                className="input-field full-width"
+                variants={textVariants}
+              />
+              <motion.input
+                type="tel"
+                placeholder="Phone Number"
+                className="input-field full-width"
+                variants={textVariants}
+              />
+              <motion.textarea
+                placeholder="Message"
+                className="input-field full-width textarea"
+                variants={textVariants}
+              />
+              <motion.button
+                type="submit"
+                className="submit-button"
+                variants={textVariants}
+              >
+                Send me a message <BsEnvelopeArrowUp />
+              </motion.button>
+            </motion.div>
           </form>
-        </div>
-        <div className="contact-info">
-          <div className="map-placeholder">
-            <MapComponent/>
-          </div>
-          
-        </div>
-      </div>
+        </motion.div>
+        <motion.div className="contact-info" variants={leftSideVariants}>
+          <motion.div className="map-placeholder" variants={textVariants}>
+            <MapComponent />
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }
