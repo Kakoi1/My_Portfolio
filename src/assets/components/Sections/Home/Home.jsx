@@ -1,5 +1,6 @@
 import React from 'react'
 import { BsDownload } from "react-icons/bs";
+import profileImage from '../assets/Images/385438962_790771539643042_7852980290333862625_n.jpg';
 import './Home.css'
 function Home() {
   return (
@@ -14,9 +15,9 @@ function Home() {
             </p>
         </div>
         <div className='rightSide'>
-            <div className='profilePic'>
-                <img src="src/assets/Images/385438962_790771539643042_7852980290333862625_n.jpg" alt="" />
-            </div>
+        <div className='profilePic'>
+            <img src={profileImage} alt="Profile picture" />
+        </div>
             <div className='DownCv'>
                 <button className='DLCV'><BsDownload/> Download CV</button>
             </div>
