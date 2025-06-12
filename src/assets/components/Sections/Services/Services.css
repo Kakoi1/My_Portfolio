@@ -1,0 +1,51 @@
+.serviceCont{
+    background-color: #454343;
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 30px;
+    color: white;
+     font-family: "Inter", sans-serif;
+     border-bottom: #EE0535 solid 5px;
+}
+.serviceWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 15px;
+}
+.serviceItem{
+    /* border: #EE0535 solid 1px; */
+    padding: 10px;
+    text-wrap: wrap;
+    width: 38%;
+    max-width: 400px;
+    height:  300px;
+    border-radius: 12px;
+    background-color: #0000008d;
+}
+.serviceIcon{
+    border: solid 1px;
+    color: #EE0535;
+    background-color: black;
+    padding: 10px;
+    border-radius: 100%;
+    display: flex;
+    width: 45px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+.serviceItem h3{
+    text-align: center;
+}
+.serviceItem p{
+    text-justify: distribute;
+    text-align: justify;
+}
+.serviceDetails{
+    padding: 0px 10px 10px 10px;
+}

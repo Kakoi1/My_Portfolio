@@ -1,0 +1,62 @@
+/* Footer.css */
+
+.footCont {
+  background-color: #454343;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px 30px 0 0;
+  width: 90%;
+  margin: 20px auto 0;
+  border-top: #EE0535 solid 5px;
+  flex-direction: column;
+}
+
+.footCont footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.initialName {
+  background-image: linear-gradient(to bottom, #EE0535, #000000);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 34px;
+  font-style: italic;
+  margin-left: 10px;
+}
+
+.initialName:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+.socialWrap {
+  display: flex;
+  gap: 20px;
+  margin-right: 10px;
+}
+
+.socialWrap a {
+  padding: 8px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  color: #EE0535;
+  font-size: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.socialWrap a:hover {
+  background-color: #333333;
+  color: #ff1a4d;
+  transform: scale(1.1);
+}

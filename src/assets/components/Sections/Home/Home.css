@@ -1,0 +1,86 @@
+.homeCont{
+ background: url(/src/assets/Images/image.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Inter", sans-serif;
+      width: 90%;
+      margin: 0 auto;
+      margin-top: 50px;
+      border-radius: 30px;
+     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.with-blur-backdrop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.145);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(3px);
+    height: inherit;
+    padding: 10px;
+     border-radius: 30px;
+  border-bottom: #EE0535 solid 5px;
+}
+/* Optional: Style adjustments for content */
+.leftSide {
+  padding: 10px;
+  max-width: 50%;
+  margin-left: 15px;
+}
+
+.leftSide h3,
+.leftSide h2,
+.leftSide p {
+  color: #fff; /* White text for contrast on blurred background */
+}
+.leftSide p {
+    font-size: .75rem;
+}
+
+.leftSide span {
+   background-image: linear-gradient(to right, #EE0535, #bfbebe);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-right: 15px;
+}
+
+.profilePic img {
+  max-width: 200px; /* Adjust size as needed */
+  border-radius: 50%; /* Optional: circular profile pic */
+  border: #EE0535 solid 5px;
+}
+
+.DLCV {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 11px;
+  background-color: #EE0535; /* Match gradient color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  box-shadow: 1px 2px 10px 0px #000000;
+  transition: ease-in 0.5s;
+}
+
+.DLCV:hover {
+  background-color: #cc042d; /* Darker shade on hover */
+   box-shadow: 1px 2px 10px 0px;
+}
+.aboutDesc{
+    margin-top: -15px;
+}

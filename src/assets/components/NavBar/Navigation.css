@@ -1,0 +1,85 @@
+.navigationBar {
+  background-color: #454343;
+  padding: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0px 0px 30px 30px;
+  width: 90%;
+  margin: 0 auto;
+  border-bottom: #EE0535 solid 5px;
+}
+
+.navigationBar .linkWrap ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+  gap: 30px;
+  font-family: "Inter", sans-serif;
+}
+
+.linkWrap {
+  margin-right: 10px;
+}
+
+.navigationBar .linkWrap .linkItem {
+  display: flex;
+  gap: 7px;
+  justify-content: center;
+  align-items: center;
+  background-color: #EE0535;
+  padding: 5px 10px;
+  border-radius: 80px;
+  color: white;
+  border: #000000 solid 1px;
+  cursor: pointer;
+}
+
+/* Hover effect for linkItem */
+.navigationBar .linkWrap .linkItem:hover {
+  background-color: #cc042d; /* Darker shade of #EE0535 */
+  transform: scale(1.05); /* Slight scale up for interactivity */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+  color: #fff; /* Ensure text remains readable */
+  text-shadow: 3px 3px 3px #000000; /* Add text shadow on hover as commented */
+}
+
+/* Uncommented text shadow for linkItem (optional, moved to hover) */
+.navigationBar .linkWrap .linkItem {
+  text-shadow: 3px 3px 3px #000000; 
+}
+
+.initialName {
+  background-image: linear-gradient(to bottom, #EE0535, #000000);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 34px;
+  font-style: italic;
+}
+
+/* Hover effect for initialName (optional, subtle effect) */
+.initialName:hover {
+  transform: scale(1.02); /* Slight scale on hover */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.linkIcon {
+  padding: 5px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  color: #EE0535;
+}
+
+/* Hover effect for linkIcon */
+.linkItem:hover .linkIcon {
+  background-color: #333333; /* Darker gray for contrast */
+  color: #ff1a4d; /* Lighter shade of #EE0535 */
+  transform: scale(1.1); /* Slight scale up */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
