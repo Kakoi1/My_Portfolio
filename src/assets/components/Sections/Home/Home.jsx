@@ -1,6 +1,6 @@
 import React from 'react'
 import { BsDownload } from "react-icons/bs";
-import profileImage from '../assets/Images/385438962_790771539643042_7852980290333862625_n.jpg';
+import profileImage from '../../../Images/385438962_790771539643042_7852980290333862625_n.jpg';
 import './Home.css'
 function Home() {
   return (
