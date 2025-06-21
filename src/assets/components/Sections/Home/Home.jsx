@@ -1,11 +1,37 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { BsDownload } from "react-icons/bs";
 import { motion } from 'framer-motion';
 import profileImage from '../../../Images/385438962_790771539643042_7852980290333862625_n.jpg';
 import './Home.css';
 import { leftSideVariants, textVariants, rightSideVariants } from '../../Motions/MotionFrame';
+import axios from 'axios';
+const apiBackend = import.meta.env.VITE_BACK_END;
+import Toaster from '../../toast/Toaster';
 
 function Home() {
+
+const [downloadPromise, setDownloadPromise] = useState(null);
+
+const handleSubmit = async () => {
+  
+          const downloadPromise = axios.get(`${apiBackend}api/download`, {
+              responseType: 'blob',
+          })
+          .then((response) => {
+                  const blob = response.data;
+                  const url = window.URL.createObjectURL(blob);
+                  const link = document.createElement('a');
+                  link.href = url;
+                  link.download = 'resume.pdf';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                  window.URL.revokeObjectURL(url);
+                  return 'File downloaded successfully!';
+          });
+    setDownloadPromise(downloadPromise);
+  };
+
   return (
     <motion.div 
       className='homeCont'
@@ -13,6 +39,12 @@ function Home() {
       animate="visible"
       variants={rightSideVariants}
     >
+      <Toaster
+        myPromise={downloadPromise}
+        pending="Downloading file..."
+        message="File downloaded successfully! 🎉"
+        error = 'Failed to Download File: '
+      />
       <motion.div 
         className="with-blur-backdrop"
         initial="hidden"
@@ -42,7 +74,9 @@ function Home() {
             <img src={profileImage} alt="Profile picture" />
           </div>
           <div className='DownCv'>
-            <button className='DLCV'>
+            <button
+            onClick={handleSubmit}
+            className='DLCV'>
               <BsDownload /> Download CV
             </button>
           </div>

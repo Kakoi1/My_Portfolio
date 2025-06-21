@@ -5,11 +5,14 @@ import Home from '../components/Sections/Home/Home'
 import Services from '../components/Sections/Services/Services'
 import Skills from '../components/Sections/Skills/Skills'
 import Contact from '../components/Sections/Contact/Contact'
+import { ToastContainer } from 'react-toastify';
 import './MainLayout.css'
 function Layout() {
   return (
     <div className='MainContainer'>
+      
         <Navigation/>
+        <ToastContainer />
         <section>
             <Home/>
         </section>

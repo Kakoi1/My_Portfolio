@@ -88,11 +88,11 @@ function MapComponent() {
         >
           <motion.p variants={textVariants}>
             <a
-              href="https://www.linkedin.com/Kakoi1"
+              href="https://www.linkedin.com/in/shanero22/"
               target="_blank"
               rel="noopener noreferrer"
             >
-             <BsLinkedin /> https://www.linkedin.com/Kakoi1
+             <BsLinkedin /> https://www.linkedin.com/in/shanero22/
             </a>
           </motion.p>
           <motion.p variants={textVariants}>
