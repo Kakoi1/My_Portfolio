@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 const baseUrl = window.location.origin;
-
+import myImage from '../../Images/385438962_790771539643042_7852980290333862625_n.jpg'
 const MySeo = ({ customImage }) => {
   useEffect(() => {
     // Remove existing OG image tags
@@ -11,7 +11,7 @@ const MySeo = ({ customImage }) => {
     // Add OG image tags
     const ogImage = document.createElement('meta');
     ogImage.setAttribute('property', 'og:image');
-    ogImage.setAttribute('content', customImage || `${baseUrl}/images/385438962_790771539643042_7852980290333862625_n.jpg`);
+    ogImage.setAttribute('content', customImage || `${baseUrl}${myImage}`);
 
     const ogImageWidth = document.createElement('meta');
     ogImageWidth.setAttribute('property', 'og:image:width');

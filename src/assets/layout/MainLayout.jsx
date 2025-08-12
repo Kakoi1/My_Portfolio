@@ -35,27 +35,27 @@ function Layout() {
     '#About-me': {
       title: 'R.S - About Me',
       description: 'Learn about R.S, a web developer.',
-      image: `${window.location.origin}/images/og-about.jpg`,
+       image: `${window.location.origin}/src/assets/Images/385438962_790771539643042_7852980290333862625_n.jpg`,
     },
     '#Services': {
       title: 'R.S - Services',
       description: 'Web development services by R.S.',
-      image: `${window.location.origin}/images/og-services.jpg`,
+        image: `${window.location.origin}/src/assets/Images/385438962_790771539643042_7852980290333862625_n.jpg`,
     },
     '#Skills': {
       title: 'R.S - Skills',
       description: 'Technical skills of R.S.',
-      image: `${window.location.origin}/images/og-skills.jpg`,
+       image: `${window.location.origin}/src/assets/Images/385438962_790771539643042_7852980290333862625_n.jpg`,
     },
     '#Contact-me': {
       title: 'R.S - Contact',
       description: 'Contact R.S for projects.',
-      image: `${window.location.origin}/images/og-contact.jpg`,
+        image: `${window.location.origin}/src/assets/Images/385438962_790771539643042_7852980290333862625_n.jpg`,
     },
     'default': {
       title: 'R.S - Portfolio',
       description: 'Portfolio of R.S, showcasing web development.',
-      image: `${window.location.origin}/images/385438962_790771539643042_7852980290333862625_n.jpg`,
+      image: `${window.location.origin}/src/assets/Images/385438962_790771539643042_7852980290333862625_n.jpg`,
     },
   };
 
