@@ -1,3 +1,12 @@
+.navCont {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* right: 0; */
+    z-index: 1000;
+}
+
 .navigationBar {
   background-color: #454343;
   padding: 5px 20px;
@@ -11,88 +20,171 @@
 }
 
 .navigationBar .linkWrap ul {
-  display: flex;
-  justify-content: space-evenly;
-  list-style-type: none;
-  gap: 30px;
-  font-family: "Inter", sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    gap: 30px;
+    font-family: "Inter", sans-serif;
 }
-.leftChev{
-   padding: 5px;
-  border-radius: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #000000;
-  color: #EE0535;
-  font-size: 20px;
+
+.leftChev {
+    padding: 5px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    color: #EE0535;
+    font-size: 20px;
 }
+
 .leftChev:hover {
-  background-color: #333333; /* Darker gray for contrast */
-  color: #ff1a4d; /* Lighter shade of #EE0535 */
+    background-color: #333333;
+    color: #ff1a4d;
 }
+
 .linkWrap {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 .navigationBar .linkWrap .linkItem {
-  display: flex;
-  gap: 7px;
-  justify-content: center;
-  align-items: center;
-  background-color: #EE0535;
-  padding: 5px 10px;
-  border-radius: 80px;
-  color: white;
-  border: #000000 solid 1px;
-  cursor: pointer;
+    display: flex;
+    gap: 7px;
+    justify-content: center;
+    align-items: center;
+    background-color: #EE0535;
+    padding: 5px 10px;
+    border-radius: 80px;
+    color: white;
+    border: #000000 solid 1px;
+    cursor: pointer;
+    text-shadow: 3px 3px 3px #000000;
 }
 
-/* Hover effect for linkItem */
 .navigationBar .linkWrap .linkItem:hover {
-  background-color: #cc042d; /* Darker shade of #EE0535 */
-  transform: scale(1.05); /* Slight scale up for interactivity */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
-  color: #fff; /* Ensure text remains readable */
-  text-shadow: 3px 3px 3px #000000; /* Add text shadow on hover as commented */
-}
-
-/* Uncommented text shadow for linkItem (optional, moved to hover) */
-.navigationBar .linkWrap .linkItem {
-  text-shadow: 3px 3px 3px #000000; 
+    background-color: #cc042d;
+    transform: scale(1.05);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    color: #fff;
+    text-shadow: 3px 3px 3px #000000;
 }
 
 .initialName {
-  background-image: linear-gradient(to bottom, #EE0535, #000000);
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  font-family: "Inter", sans-serif;
-  font-weight: 800;
-  font-size: 34px;
-  font-style: italic;
+    background-image: linear-gradient(to bottom, #EE0535, #000000);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    font-size: 34px;
+    font-style: italic;
 }
 
-/* Hover effect for initialName (optional, subtle effect) */
 .initialName:hover {
-  transform: scale(1.02); /* Slight scale on hover */
-  transition: transform 0.3s ease; /* Smooth transition */
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
 }
 
 .linkIcon {
-  padding: 5px;
-  border-radius: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #000000;
-  color: #EE0535;
+    padding: 5px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    color: #EE0535;
 }
 
-/* Hover effect for linkIcon */
 .linkItem:hover .linkIcon {
-  background-color: #333333; /* Darker gray for contrast */
-  color: #ff1a4d; /* Lighter shade of #EE0535 */
-  transform: scale(1.1); /* Slight scale up */
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    background-color: #333333;
+    color: #ff1a4d;
+    transform: scale(1.1);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #454343;
+    padding: 2rem;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+    border-left: #EE0535 solid 5px;
+    z-index: 1;
+}
+.overlay{
+  background-color: #00000080;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  position: absolute;
+}
+.sidebarLinks {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    font-family: "Inter", sans-serif;
+}
+
+.sidebarLinks li {
+    padding: 0.5rem;
+}
+
+.sidebarLinks .linkItem {
+    display: flex;
+    gap: 30px;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #EE0535;
+    padding: 5px 10px;
+    border-radius: 80px;
+    color: white;
+    border: #000000 solid 1px;
+    cursor: pointer;
+    text-shadow: 3px 3px 3px #000000;
+  
+}
+ .linkItem{
+  text-decoration: none;
+    text-align: center;
+ }
+
+.sidebarLinks .linkItem:hover {
+    background-color: #cc042d;
+    transform: scale(1.05);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    color: #fff;
+    text-shadow: 3px 3px 3px #000000;
+}
+
+.sidebarLinks .linkItem .linkIcon {
+    padding: 5px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    color: #EE0535;
+}
+
+.sidebarLinks .linkItem:hover .linkIcon {
+    background-color: #333333;
+    color: #ff1a4d;
+    transform: scale(1.1);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+@media (min-width: 1200px) {
+    .sidebar {
+        display: none;
+    }
+}
+
+.closeButton{
+  font-size: 20px;
+  font-weight: bold;
 }
