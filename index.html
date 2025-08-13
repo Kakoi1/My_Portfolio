@@ -17,7 +17,7 @@
     <meta property="og:title" content="Roland Shane Lopez | Web Developer" />
     <meta property="og:description" content="Portfolio of Roland Shane Lopez, a professional web developer specializing in modern web technologies." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://my-portfolio-weld-three-57.vercel.app" />
+    <meta property="og:url" content="" id="og-url" />
     <meta property="og:image" content="https://storage.cloud.google.com/homeseek-profile-image/profile_picture/385438962_790771539643042_7852980290333862625_n.jpg" />
     <meta property = "image:alt" content="gwapo ni"/>
     <meta property="og:site_name" content="Roland Shane Lopez Portfolio" />
@@ -33,5 +33,9 @@
   <body style="margin: 0;">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+  <script>
+  document.getElementById('og-url').setAttribute('content', window.location.origin);
+</script>
   </body>
+
 </html>
