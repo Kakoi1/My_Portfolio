@@ -1,5 +1,5 @@
 import Layout from "./assets/layout/MainLayout"
-import SEO from "./assets/components/SEO/SeoComponents"
+import React, { useEffect } from 'react';
 const baseUrl = window.location.origin;
 function App() {
   return (
