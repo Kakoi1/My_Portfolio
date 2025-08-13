@@ -71,7 +71,7 @@ const handleSubmit = async () => {
           variants={rightSideVariants}
         >
           <div className='profilePic'>
-            <img src={"profileImage"} alt="Profile picture" />
+            <img src={profileImage} alt="Profile picture" />
           </div>
           <div className='DownCv'>
             <button
