@@ -40,7 +40,7 @@ function Layout() {
           <Services />
         </section>
         <section id='Skills'>
-          <h1 className='sectionTitle' style={{ textAlign: 'center' }}><span>Skills</span></h1>
+          <h1 className='sectionTitle' style={{ textAlign: 'center' }}><span>TechStacks</span></h1>
           <Skills />
         </section>
         <section id='Contact-me'>
